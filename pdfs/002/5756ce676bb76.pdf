@@ -1,0 +1,185 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 26-Abr-2016 às 14:48
+-- Versão do servidor: 10.1.10-MariaDB
+-- PHP Version: 7.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `aluno_licitacoes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `fornecedor`
+--
+
+CREATE TABLE `fornecedor` (
+  `idfornecedor` int(254) NOT NULL,
+  `idusuario` int(254) NOT NULL,
+  `CNPJ` varchar(254) NOT NULL,
+  `telefone` varchar(254) NOT NULL,
+  `responsavel` varchar(254) NOT NULL,
+  `endereco` varchar(254) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`idfornecedor`, `idusuario`, `CNPJ`, `telefone`, `responsavel`, `endereco`) VALUES
+(1, 4, '643434', '63843438', 'judeu', 'asdsa'),
+(2, 5, '5354345', '3535453', 'dasdasd', 'dasd'),
+(3, 6, '644', '351435', 'asd', 'dasd');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `historico`
+--
+
+CREATE TABLE `historico` (
+  `idhistorico` int(254) NOT NULL,
+  `texto` text NOT NULL,
+  `data` date NOT NULL,
+  `idlicitacoes` int(254) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `licitacoes`
+--
+
+CREATE TABLE `licitacoes` (
+  `idlicitacao` int(254) NOT NULL,
+  `descricao` varchar(254) NOT NULL,
+  `data` varchar(254) NOT NULL,
+  `edital` varchar(254) NOT NULL,
+  `status` varchar(254) NOT NULL,
+  `caminho` varchar(254) NOT NULL,
+  `vencedor` varchar(245) NOT NULL,
+  `idusuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `proposta`
+--
+
+CREATE TABLE `proposta` (
+  `idproposta` int(254) NOT NULL,
+  `data` date NOT NULL,
+  `caminho` varchar(254) NOT NULL,
+  `estado` varchar(254) NOT NULL,
+  `idfornecedor` int(254) NOT NULL,
+  `idlicitacao` int(254) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(254) NOT NULL,
+  `nome` varchar(254) NOT NULL,
+  `senha` varchar(254) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `cidade` varchar(254) NOT NULL,
+  `cargo` varchar(254) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`, `cidade`, `cargo`) VALUES
+(1, 'Nico', 'admin', 'admin@admin.com', 'batata', 'admin'),
+(2, 'Juca', 'vendedor', 'vendedor@vendedor.com', 'batata', 'vendedor'),
+(3, 'José', 'fornecedor', 'fornecedor@fornecedor.com', 'batata', 'fornecedor'),
+(4, 'TEste', 'dasd', 'asd@edas.com', 'batata', 'fornecedor'),
+(5, 'Teste', 'dsad', 'dasd@dasd.com', 'batata', 'fornecedor'),
+(6, 'Teste', 'dsad', 'dasd@dasd.com', 'dasd', 'fornecedor'),
+(8, 'Nico2', 'alo', 'alo@alo.com', 'Garibas', 'vendedor');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fornecedor`
+--
+ALTER TABLE `fornecedor`
+  ADD PRIMARY KEY (`idfornecedor`);
+
+--
+-- Indexes for table `historico`
+--
+ALTER TABLE `historico`
+  ADD PRIMARY KEY (`idhistorico`);
+
+--
+-- Indexes for table `licitacoes`
+--
+ALTER TABLE `licitacoes`
+  ADD PRIMARY KEY (`idlicitacao`);
+
+--
+-- Indexes for table `proposta`
+--
+ALTER TABLE `proposta`
+  ADD PRIMARY KEY (`idproposta`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fornecedor`
+--
+ALTER TABLE `fornecedor`
+  MODIFY `idfornecedor` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `historico`
+--
+ALTER TABLE `historico`
+  MODIFY `idhistorico` int(254) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `licitacoes`
+--
+ALTER TABLE `licitacoes`
+  MODIFY `idlicitacao` int(254) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `proposta`
+--
+ALTER TABLE `proposta`
+  MODIFY `idproposta` int(254) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

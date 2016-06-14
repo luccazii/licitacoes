@@ -1,0 +1,76 @@
+.quadrado-lista{
+	border: 1px solid black;
+	border-radius: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.navbar-global{
+	background-color: #34465d;
+}
+
+.navbar-brand{
+	color: white;
+}
+
+.title{
+	color: #A61D00;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover{
+	background-color: #A61D00;
+	border-color: #A61D00;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+	color: #FF6140;
+}
+
+.pagination > li > a, .pagination > li > span{
+	color: #BD081C;
+}
+
+a{
+	color: #A61D00;
+}
+
+.licitacao_item_title{
+	color: #A61D00;
+	font-size: 21px;
+	margin: 0px;
+	padding: 0px;
+	margin-left: -15px;
+}
+
+.licitacao_item_texto{
+	color: #000000;
+	font-size: 18px;
+}
+
+.licitacao_item_icone{
+	font-size: 18px;
+	color: #F9A825;
+}
+
+
+@media screen and (min-width: 1570px) {
+	.navbar-brand {
+		background-image: url('../img/editora.png');
+		background-size: 100%;
+		position: absolute;
+		height: 200px;
+		width: 200px;
+		border: 3px solid;
+		border-top: none;
+		border-radius: 0px 0px 18px 18px;
+		border-color: #34465d;
+		left: 30px;
+	}
+}
+
+.navbar-collapse{
+	float: right;
+}
+
+/* if < 1575 { mudar logo pra menor } */
+
