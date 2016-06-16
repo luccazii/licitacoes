@@ -63,8 +63,7 @@ include_once("classes/controle.class.php");
 			$usuario = $bd->executa("SELECT * FROM usuario WHERE id ='".$id."' ");
 			foreach($usuario as $user){
 
-				//mail( $user['email'] , 'Vencedor da licitação!' , 'Parabéns! Você venceu a licitação!!!');
-				mail( 'nic.voy@hotmail.com' , 'Vencedor da licitação!' , 'Parabéns! Você venceu a licitação!!!');
+			mail( $user['email'] , 'Vencedor da licitaÃ§Ã£o!' , 'ParabÃ©ns! VocÃª venceu a licitaÃ§Ã£o!!!');
 				$lici = new licitacao();
 		  		$lici->setIdLicitacao($licitacao[0]->getIdLicitacao());
 		  		$lici->setDescricao($licitacao[0]->getDescricao());
